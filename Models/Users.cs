@@ -9,9 +9,8 @@ namespace Models
 
         public Users() { }
 
-        public Users(int id, string name, string email, string password)
+        public Users(string name, string email, string password)
         {
-            this.Id = id;
             this.Name = name;
             this.Email = email;
             this.Password = password;

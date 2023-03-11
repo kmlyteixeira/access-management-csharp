@@ -15,9 +15,8 @@ namespace Models
 
     public Profiles() { }
     
-    public Profiles(int id, Users user, ProfileType profileType)
+    public Profiles(Users user, ProfileType profileType)
     {
-      this.Id = id;
       this.UserId = user.Id;
       this.ProfileType = profileType;
     }
