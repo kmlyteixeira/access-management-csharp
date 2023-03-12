@@ -21,22 +21,22 @@ Sistema de controle de acesso
         * data_expiracao - DateTime (null)
     
 * Criar usuário: CRUD de Usuários
-  * Criar usuário
-  * Alterar usuário
-  * Excluir usuário
-  * Listar usuário - Exibir informação de Perfil
-  * Contabilizar quantos usuários são user e admin - Exibir na lista de usuários
-  * * Contabilizar quantas sessões totais e quantas ativas - Exibir na lista de usuários
+  * Criar usuário ☑
+  * Alterar usuário ☑
+  * Excluir usuário ☑
+  * Listar usuário ☑ - Exibir informação de Perfil ☑ 
+  * Contabilizar quantos usuários são user e admin ☑ - Exibir na lista de usuários 
+  * * Contabilizar quantas sessões totais e quantas ativas ☑ - Exibir na lista de usuários
 * Definir Perfil: CUD de Perfil
-  * Criar perfil para usuário - Validar se usuário já não tem perfil
-  * Alterar perfil
-  * Excluir perfil
+  * Criar perfil para usuário ☑ - Validar se usuário já não tem perfil ☑
+  * Alterar perfil ☑
+  * Excluir perfil ☑
 * Criar Sessão: CRD de Sessões
-  * Criar Login: Autenticação de Usuário
-  * Criar Logout: Remover Sessão
-  * Listar sessões
-    * Imprimir usuário está logado
-    * Imprimir se usuário é admin ou user
+  * Criar Login ☑: Autenticação de Usuário ☑
+  * Criar Logout ☑: Remover Sessão ☑
+  * Listar sessões ☑
+    * Imprimir usuário está logado ☑
+    * Imprimir se usuário é admin ou user ☑
   * Criar Middleware: Verificar se usuário está logado
   * Criar Middleware: Verificar se usuário é admin
   * Criar Middleware: Verificar se usuário é user
