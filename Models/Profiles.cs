@@ -11,7 +11,7 @@ namespace Models
     public Enumerators.ProfileType ProfileType { get; set; }
 
     public Profiles() { }
-    
+
     public Profiles(Users user, Enumerators.ProfileType profileType)
     {
       this.UserId = user.Id;
