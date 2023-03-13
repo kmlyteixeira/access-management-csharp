@@ -32,6 +32,16 @@ namespace Models
       return db.Sessions.Find(id);
     }
 
+    public static Sessions GetSessionByUser(Users user)
+    {
+      Context db = new Context();
+
+      return (from session in db.Sessions
+              where session.UserId == user.Id
+              orderby session.CreatedDate descending
+              select session).First();
+    }
+
     public static Sessions DeleteSession(Sessions session)
     {
       Context db = new Context();
