@@ -37,6 +37,6 @@ Sistema de controle de acesso
   * Listar sessões ☑
     * Imprimir usuário está logado ☑
     * Imprimir se usuário é admin ou user ☑
-  * Criar Middleware: Verificar se usuário está logado
-  * Criar Middleware: Verificar se usuário é admin
-  * Criar Middleware: Verificar se usuário é user
+  * Criar Middleware: Verificar se usuário está logado ☑
+  * Criar Middleware: Verificar se usuário é admin ☑
+  * Criar Middleware: Verificar se usuário é user ☑
