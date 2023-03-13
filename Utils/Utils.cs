@@ -104,12 +104,20 @@ namespace Utils
     public static string InvalidPassword = "Password must contain only numbers.";
     public static string IncorrectPassword = "Password is incorrect.";
     public static string UserAlreadyHasProfile = "User already has a profile.";
-    public static string UserDoesNotHaveProfile = "User does not have a profile.";
+    public static string UserDoesNotHaveProfile = "User does not have a profile. Admin must create a profile for this user.";
     public static string UserNotFound = "User not found.";
     public static string SessionNotFound = "Session not found.";
     public static string SessionExpired = "Session expired.";
     public static string SessionInvalid = "Session invalid.";
     public static string SessionCreated = "Session created.";
     public static string SessionDeleted = "Session deleted.";
+    public static string InvalidOption = "Invalid option.";
+    public static string ExitSystem = "Bye bye!";
+    public static string ProfileCreated = "Profile created.";
+    public static string ProfileUpdated = "Profile updated.";
+    public static string ProfileDeleted = "Profile deleted.";
+    public static string UserDeleted = "User deleted.";
+    public static string UserCreated = "User created successfully! Login to continue.";
+    public static string UserAlreadyLogged = "User already logged. Redirecting to profile page.";
   }
 }
