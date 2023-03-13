@@ -4,9 +4,9 @@ namespace Controllers
 {
   public class Profiles
   {
-    public static Models.Profiles CreateProfile(string userId, string profileType)
+    public static Models.Profiles CreateProfile(int userId, string profileType)
     {
-      Models.Users user = Controllers.Users.GetUserById(userId);
+      Models.Users user = Controllers.Users.GetUserById(userId.ToString());
       Models.Profiles profileUser = Models.Profiles.GetProfileByUser(user);
 
       if (profileUser != null)
@@ -36,7 +36,7 @@ namespace Controllers
 
     public static Models.Profiles DeleteProfile(string userId)
     {
-      Models.Users user = Controllers.Users.GetUserById(userId);
+      Models.Users user = Controllers.Users.GetUserById(userId.ToString());
       Models.Profiles profileUser = Models.Profiles.GetProfileByUser(user);
 
       if (profileUser == null)
@@ -63,9 +63,9 @@ namespace Controllers
       return Models.Profiles.GetProfileById(id);
     }
 
-    public static Utils.Enumerators.ProfileType GetProfileTypeByUser(string userId)
+    public static Utils.Enumerators.ProfileType GetProfileTypeByUser(int userId)
     {
-      Models.Users user = Controllers.Users.GetUserById(userId);
+      Models.Users user = Controllers.Users.GetUserById(userId.ToString());
       Models.Profiles profile = Models.Profiles.GetProfileByUser(user);
       return profile.ProfileType;
     }
