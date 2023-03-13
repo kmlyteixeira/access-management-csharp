@@ -10,7 +10,7 @@ namespace Utils
     {
       if (!Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
       {
-        throw new Exception("Invalid email address");
+        throw new Exception(Messages.InvalidEmail);
       }
     }
 
@@ -18,7 +18,7 @@ namespace Utils
     {
       if (!Regex.IsMatch(password, @"^\d{8}$"))
       {
-        throw new Exception("Password must contain only numbers.");
+        throw new Exception(Messages.InvalidPassword);
       }
     }
 
@@ -96,5 +96,20 @@ namespace Utils
       Pulchritudinous = 4,
       Ubiquitous = 5
     }
+  }
+
+  public class Messages
+  {
+    public static string InvalidEmail = "Invalid email address";
+    public static string InvalidPassword = "Password must contain only numbers.";
+    public static string IncorrectPassword = "Password is incorrect.";
+    public static string UserAlreadyHasProfile = "User already has a profile.";
+    public static string UserDoesNotHaveProfile = "User does not have a profile.";
+    public static string UserNotFound = "User not found.";
+    public static string SessionNotFound = "Session not found.";
+    public static string SessionExpired = "Session expired.";
+    public static string SessionInvalid = "Session invalid.";
+    public static string SessionCreated = "Session created.";
+    public static string SessionDeleted = "Session deleted.";
   }
 }
