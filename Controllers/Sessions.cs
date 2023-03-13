@@ -6,24 +6,28 @@ namespace Controllers
 {
   public class Sessions
   {
-    public static void Login(string email, string password)
+    public static Models.Sessions Login(string email, string password)
     {
+      Models.Sessions session = null;
       Models.Users user = Controllers.Users.GetUserByEmail(email);
       if (user == null)
       {
         throw new Exception(Messages.InvalidEmail);
       }
 
-      if (user.Password != Utils.Utils.GenerateHashCode(password.GetHashCode()).ToString())
+      if (Controllers.Users.UserAuth(email, password))
       {
-        throw new Exception(Messages.IncorrectPassword);
+        string accessToken = Utils.Utils.GenerateAccessToken(user.Name);
+        DateTime createdDate = DateTime.Now;
+        DateTime expirationDate = createdDate.AddHours(1);
+
+        session = new Models.Sessions(user, accessToken, createdDate, expirationDate);
       }
-
-      string accessToken = Utils.Utils.GenerateAccessToken(user.Name);
-      DateTime createdDate = DateTime.Now;
-      DateTime expirationDate = createdDate.AddHours(1);
-
-      Models.Sessions session = new Models.Sessions(user, accessToken, createdDate, expirationDate);
+      else
+      {
+        throw new Exception(Messages.InvalidPassword);
+      }
+      return session;
     }
 
     public static void Logout(string id)

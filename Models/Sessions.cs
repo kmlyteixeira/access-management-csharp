@@ -16,6 +16,7 @@ namespace Models
     public Sessions(Users user, string token, DateTime createdDate, DateTime expirationDate)
     {
       this.UserId = user.Id;
+      this.User = user;
       this.Token = token;
       this.CreatedDate = createdDate;
       this.ExpirationDate = expirationDate;
