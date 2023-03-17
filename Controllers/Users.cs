@@ -1,5 +1,7 @@
 using Repository;
 using Utils;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Controllers
 {
@@ -59,20 +61,19 @@ namespace Controllers
       return Models.Users.GetAllUsers();
     }
 
-    public static Boolean UserAuth(string email, string password)
+    public static bool UserAuth(string email, string password)
     {
       Utils.Utils.isEmail(email);
-      Utils.Utils.isPassword(password);
       string hashPassword = Utils.Utils.GenerateHashCode(password.GetHashCode()).ToString();
 
       Context db = new Context();
-      Models.Users user = db.Users.Where(u => u.Email == email && u.Password == hashPassword).First();
-
-      if (user == null)
+      IEnumerable<Models.Users> users = db.Users.Where(u => u.Email == email && u.Password == hashPassword);
+      
+      if (users.Count() == 0)
       {
         return false;
       }
-
+      
       return true;
     }
   }
