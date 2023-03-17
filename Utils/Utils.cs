@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
@@ -6,7 +8,7 @@ namespace Utils
 {
   public class Utils
   {
-    public static void isEmail(String email)
+    public static void isEmail(string email)
     {
       if (!Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
       {

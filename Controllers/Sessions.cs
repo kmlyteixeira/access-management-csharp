@@ -1,6 +1,8 @@
 using System.Text;
 using Repository;
 using Utils;
+using System;
+using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -58,12 +60,12 @@ namespace Controllers
 
       if (session == null)
       {
-        throw new Exception(Messages.SessionNotFound);
+        return null;
       }
 
       if (session.ExpirationDate < DateTime.Now)
       {
-        throw new Exception(Messages.SessionExpired);
+        return null;
       }
 
       return session;

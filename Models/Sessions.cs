@@ -1,4 +1,7 @@
 using Repository;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Models
 {
@@ -37,10 +40,16 @@ namespace Models
     {
       Context db = new Context();
 
-      return (from session in db.Sessions
-              where session.UserId == user.Id
-              orderby session.CreatedDate descending
-              select session).First();
+      IEnumerable <Sessions> sessions = from session in db.Sessions
+                                        where session.UserId == user.Id
+                                        select session;
+
+      if (sessions.Count() > 0)
+      {
+        return sessions.First();
+      }
+
+      return null;
     }
 
     public static Sessions DeleteSession(Sessions session)
